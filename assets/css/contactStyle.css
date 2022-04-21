@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.h_section {
+    width: 100%;
+    min-height: 130vh;
+    background-color: #E5E5E5;
+}
+
+.container {
+    max-width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 5rem;
+}
+
+.h_section .container .title h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.h_section .container .title h1:hover {
+    color: #a52a2a;
+}
+
+.image_section {
+    float: left;
+    width: 50%;
+}
+
+.image_section img {
+    width: 25rem;
+    height: 33rem;
+}
+
+.h_section .title p {
+    text-align: center;
+    font-weight: 100px;
+    color: #666;
+    position: relative;
+    width: 650px;
+    left: 450px;
+}
+
+.h_section .title p:hover {
+    color: rgb(175, 63, 63);
+}
+
+.h_section .container .image_section {
+    overflow: visible;
+    transition: 0.5s;
+}
+
+.h_section .container .section_thumbnail {
+    width: calc((var(--img-size-wpt) + 60px)*5);
+    display: flex;
+    gap: 65px;
+    padding: 65px 0;
+    animation: scroll 40s linear infinite;
+}
+
+
+/* animation */
+
+.h_section .container .section_thumbnail:hover {
+    animation-play-state: paused;
+}
+
+.h_section .container .thumbnail:hover img {
+    transform: scale(1.12);
+    transition: 1s;
+}
+
+.h_section .title p {
+    text-align: center;
+    font-weight: 100px;
+    color: #666;
+    position: relative;
+    width: 650px;
+    left: 300px;
+}
+
+.contactForm {
+    margin-top: 125px;
+    height: 555px;
+    width: 550px;
+    position: absolute;
+    left: 55%;
+    background: #fff;
+    text-align: center;
+    padding: 80px;
+    border: 1px gray solid;
+}
+
+.contactForm h2 {
+    font-size: 40px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contactForm h2:hover {
+    color: #a52a2a;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contactForm .inputBox input {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 20px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox textarea {
+    width: 100%;
+    font-size: 20px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus~span,
+.contactForm .inputBox input:valid~span,
+.contactForm .inputBox textarea:focus~span,
+.contactForm .inputBox textarea:valid~span {
+    color: #e91e63;
+    font-size: 14px;
+    transform: translateY(-20px);
+}
+
+.contactForm form .inputBox button {
+    width: 85px;
+    background-color: #387254;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.inputBox button[type="submit"]:hover {
+    background-color: #2d503e;
+}
+
+
+/*iphone 12 Pro  */
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) {
+    .h_section.container {
+        display: flex;
+    }
+    .h_section footer {
+        position: relative;
+        bottom: 8rem;
+    }
+    .image_section {
+        float: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .image_section img {
+        width: 20rem;
+        height: 25rem;
+        position: relative;
+        bottom: 5rem;
+    }
+    .contactForm {
+        width: 105%;
+        height: 53%;
+        padding: 5px 5px;
+        position: relative;
+        left: -0.5rem;
+        bottom: 10rem;
+    }
+    .contactForm form {
+        float: none;
+        width: 100%;
+        height: 40%;
+        position: none;
+    }
+    .contactForm form h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .content {
+        display: none;
+    }
+}
+
+
+/* iPad Air  */
+
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) {
+    .h_section.container {
+        display: flex;
+    }
+    .h_section footer {
+        position: relative;
+        bottom: 8rem;
+    }
+    .image_section {
+        float: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .image_section img {
+        width: 20rem;
+        height: 25rem;
+        position: relative;
+        bottom: 5rem;
+    }
+    .contactForm {
+        width: 105%;
+        height: 53%;
+        padding: 5px 5px;
+        position: relative;
+        left: -0.5rem;
+        bottom: 10rem;
+    }
+    .contactForm form {
+        float: none;
+        width: 100%;
+        height: 40%;
+        position: none;
+    }
+    .contactForm form h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .content {
+        display: none;
+    }
+}
+
+
+/* iPad  mini  */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size: medium;
+    }
+    .h_section.container {
+        display: flex;
+    }
+    .h_section footer {
+        position: relative;
+        bottom: 8rem;
+    }
+    .image_section {
+        float: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .image_section img {
+        width: 42rem;
+        height: 47rem;
+        position: relative;
+        bottom: 5rem;
+    }
+    .contactForm {
+        width: 105%;
+        height: 100%;
+        padding: 5px 5px;
+        position: relative;
+        left: -0.5rem;
+        bottom: 10rem;
+    }
+    .contactForm form {
+        float: none;
+        width: 100%;
+        height: 60%;
+        position: none;
+    }
+    .contactForm form h2 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .content {
+        display: none;
+    }
+    .c__bottom p {
+        position: relative;
+        right: 32rem;
+    }
+}

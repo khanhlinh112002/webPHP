@@ -1,0 +1,101 @@
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;300;400&family=Source+Sans+Pro:wght@300&display=swap');
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Zen Tokyo Zoo', cursive;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .image {
+            margin-left: 20%;
+        }
+        
+        .title h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #bro {
+            border-style: ridge;
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 20px;
+        }
+        
+        .menu {
+            margin-left: 30%;
+            margin-right: 20%;
+        }
+        
+        ul li {
+            list-style: none;
+            color: rgb(24, 137, 235);
+        }
+        
+        ul.main_menu li {
+            float: left;
+        }
+        
+        ul.main_menu li a {
+            padding: 12px 15px;
+            text-decoration: none;
+        }
+        
+        i {
+            font-style: italic;
+        }
+        
+        .the {
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        
+        .title:hover {
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        /*mobile width < 740px */
+        
+        @media only screen and ( max-width: 46.1875em) {
+            .image {
+                margin-left: 20%;
+            }
+            .title h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+            #bro {
+                border-style: ridge;
+                margin-left: 30%;
+                margin-right: 30%;
+                margin-top: 20px;
+            }
+            .menu {
+                margin-left: 30%;
+                margin-right: 20%;
+            }
+            ul li {
+                list-style: none;
+                color: rgb(24, 137, 235);
+            }
+            ul.main_menu li {
+                float: left;
+            }
+            ul.main_menu li a {
+                padding: 12px 15px;
+                text-decoration: none;
+            }
+            i {
+                font-style: italic;
+            }
+            .the {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }

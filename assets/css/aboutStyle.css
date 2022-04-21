@@ -1,0 +1,202 @@
+#h_section {
+    width: 100%;
+    min-height: 110vh;
+    background-color: #E5E5E5;
+}
+
+.container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 5rem;
+}
+
+#h_section .container .title {
+    padding-bottom: 5rem;
+}
+
+#h_section .container .title h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#h_section .container .title h1:hover {
+    color: #a52a2a;
+}
+
+.content marquee:hover {
+    color: #a52a2a;
+}
+
+.content_section {
+    float: left;
+    width: 55%;
+}
+
+.image_section {
+    float: right;
+    width: 40%;
+}
+
+.image_section img {
+    max-width: 32rem;
+    min-height: 27rem;
+}
+
+
+/* animation */
+
+#h_section .container .image_section {
+    overflow: visible;
+    transition: 0.5s;
+}
+
+#h_section .container .section_thumbnail {
+    width: calc((var(--img-size-wpt) + 60px)*5);
+    display: flex;
+    gap: 65px;
+    padding: 65px 0;
+    animation: scroll 40s linear infinite;
+}
+
+#h_section .container .section_thumbnail:hover {
+    animation-play-state: paused;
+}
+
+#h_section .container .thumbnail:hover img {
+    transform: scale(1.12);
+    box-shadow: 0 0 10px 5px #E2D9CE;
+    transition: 1s;
+}
+
+#h_section .container .img_title {
+    padding-bottom: var(--padding-post-thumbnail);
+    color: black;
+    font-size: var(--fs-post-title);
+    font-family: 'BioRhyme', serif;
+}
+
+
+/* heh?  */
+
+.image_section i {
+    font-size: 20px;
+    position: relative;
+    left: 160px;
+}
+
+.content_section .title {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.content_section .content h3 {
+    margin-top: 20px;
+    color: #5d5d5d;
+    font-size: 25px;
+}
+
+.content_section .content p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.content_section .content .button {
+    margin-top: 30px;
+}
+
+.content_section .content .button a {
+    background-color: #3d3d3d;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.content_section .content .button a:hover {
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+.content_section .social {
+    margin-top: 40px;
+}
+
+.content_section .social i {
+    color: #a52a2a;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+
+.content_section .social i:hover {
+    color: #3d3d3d;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .content_section {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image_section {
+        float: none;
+        width: 100%;
+    }
+    .image_section img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+    .content_section .title {
+        text-align: center;
+        font-size: 19px;
+    }
+    .content_section .content .button {
+        text-align: center;
+    }
+    .content_section .content .button a {
+        padding: 9px 30px;
+    }
+    .content_section .social {
+        text-align: center;
+    }
+}
+
+
+/* Mobile: width >= 740px  */
+
+@media only screen and (max-width:46.25em) {
+    .container {
+        flex-direction: column-reverse;
+        padding-top: 32%;
+    }
+    .thumbnail img {
+        width: 120%;
+        padding: 8%;
+        padding-bottom: 70%;
+    }
+}
+
+
+/* tablet:width >=740px and width < 1024px  */
+
+@media only screen and (min-width:46.25em) and (max-width:63.9375em) {
+    .container {
+        flex-direction: column-reverse;
+        padding-top: 32%;
+    }
+    .thumbnail img {
+        width: 120%;
+        padding: 8%;
+        padding-bottom: 70%;
+    }
+}
