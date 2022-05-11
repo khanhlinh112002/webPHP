@@ -32,7 +32,7 @@
                             <a href="#"><i class="fas fa-phone-volume"></i>+0079089 6767</a>
                         </div>
                         <div class="email">
-                            <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+                            <a href="#"><i class="fas fa-envelope"></i>benq15420@gmail.com</a>
                         </div>
                     </div>
                 </div>

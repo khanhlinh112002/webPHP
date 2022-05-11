@@ -17,11 +17,10 @@ if (isset($_POST['post'])) {
 
 	$poster->save_post($title, $content, $location);
 	if (isset($_POST['img'])) {
-
 		$count = count($_POST['img']);
 		for ($i = 0; $i < $count; $i++) {
 			$image = $_POST['img'][$i];
-			$namePhoto = $_POST['namePhoto'][$i];
+			$namePhoto = $_POST['namePhoto'][$i+1];
 			$category = $_POST['category'][$i];
 			$poster->save_photo($image, $namePhoto, $category);
 		}
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-?>
 <?php
 class Action
 {

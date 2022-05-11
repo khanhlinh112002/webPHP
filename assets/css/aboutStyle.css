@@ -25,7 +25,7 @@
 }
 
 .content marquee:hover {
-    color: #a52a2a;
+    font-style: italic;
 }
 
 .content_section {

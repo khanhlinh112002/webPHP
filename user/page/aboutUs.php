@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/aboutStyle.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 <div class="section_thumbnail">
                     <div class="thumbnail">
                         <a href="">
-                            <img src="../../assets/image/aboutImage.jpg">
+                            <img src="../../assets/image/pictureAbout/customer_image.jpg">
                         </a>
                     </div>
                 </div>

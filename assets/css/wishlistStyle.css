@@ -111,6 +111,7 @@
 #uyen__wishlist .wishlist__post__wrapper {
     overflow: hidden;
     transition: 0.5s;
+    padding-bottom: 100px;
 }
 
 #uyen__wishlist .wishlist__post {
@@ -118,7 +119,7 @@
     display: flex;
     gap: 65px;
     padding: 65px 0;
-    animation: scroll 40s linear infinite;
+    /* animation: scroll 40s linear infinite; */
 }
 
 #uyen__wishlist .wishlist__post:hover {
@@ -162,7 +163,7 @@
     color: #0f99a4;
     border: none;
     background-color: transparent;
-    color: red;
+    color: #F9A04E;
     cursor: pointer;
 }
 
@@ -213,24 +214,6 @@
 #uyen__wishlist .first__line {
     display: flex;
 }
-
-
-/*#uyen__wishlist .middle__elementor{*/
-
-
-/*    width: 80px;*/
-
-
-/*    height: 80px;*/
-
-
-/*    background-color: #192c35;*/
-
-
-/*    border-radius: 50%;*/
-
-
-/*}*/
 
 @keyframes textclip {
     to {

@@ -186,7 +186,7 @@
 
 
         public function processSendEmailRegister($email) {
-            if ($this->checkAvailableEmail($email)) {
+            if (!$this->checkAvailableEmail($email)) {
                 $this->sendEmailRegister($email);
                 echo "<script>alert('We have sent you an email. Please check it.');</script>";
             }
@@ -220,15 +220,18 @@
                 $mail->CharSet  = "utf-8";
                 $mail->Host = 'smtp.gmail.com';  //SMTP servers
                 $mail->SMTPAuth = true; // Enable authentication
-                $mail->Username = 'dennttinh@gmail.com'; // SMTP username
-                $mail->Password = 'hothiden25102002';   // SMTP password
+                $mail->Username = 'benq15420@gmail.com'; // SMTP username
+                $mail->Password = 'ftxavrbvbcyvffmk';   // SMTP password
                 $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
                 $mail->Port = 465;  // port to connect to                
-                $mail->setFrom('dennttinh@gmail.com', 'Ben Quik website' ); 
+                $mail->setFrom('benq15420@gmail.com', 'Ben Quik website' ); 
                 $mail->addAddress($email); 
                 $mail->isHTML(true);  // Set email format to HTML
-                $mail->Subject = 'Thư gửi lại mật khẩu';
-                $noidungthu = "<p>Đây là mật khẩu mới '.$newPass'</p>"; 
+                $mail->Subject = 'Chúng tôi đã khôi phục thành công tài khoản của bạn';
+                $noidungthu = "<p>Chào mừng bạn đã quay trở lại tài khoản của mình. </p>";
+                $noidungthu .= "<p>Đây là tài mật khẩu mới của bạn: '$newPass'</p>";
+                $noidungthu .= "<p>Nếu có bất kỳ thắc mắc nào vui lòng liên hệ với chúng tôi qua email này nhé!</p>" ;
+                $noidungthu .= "<p>Chúc bạn một ngày tốt lành.</p>";
                 $mail->Body = $noidungthu;
                 $mail->smtpConnect( array(
                     "ssl" => array(
@@ -238,7 +241,6 @@
                     )
                 ));
                 $mail->send();
-                echo 'Đã gửi mail xong';
             } catch (Exception $e) {
                 echo 'Error: ', $mail->ErrorInfo;
             }
@@ -253,12 +255,12 @@
                 $mail->CharSet  = "utf-8";
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true; // Enable authentication
-                $mail->Username = 'dennttinh@gmail.com'; // SMTP username
-                $mail->Password = 'hothiden25102002';   // SMTP password
+                $mail->Username = 'benq15420@gmail.com'; // SMTP username
+                $mail->Password = 'ftxavrbvbcyvffmk';   // SMTP password
                 $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
                 $mail->Port = 465;  // port to connect to                
                 $mail->setFrom($email, $fullname ); 
-                $mail->addAddress('huy.nguyen23@student.passerellesnumeriques.org'); 
+                $mail->addAddress('benq15420@gmail.com', 'Ben Quik website' ); 
                 $mail->isHTML(true);  // Set email format to HTML
                 $mail->Subject = ("$email(Email Contact)");
                 $noidungthu = "
@@ -302,25 +304,23 @@
                 $mail->CharSet  = "utf-8";
                 $mail->Host = 'smtp.gmail.com';  //SMTP servers
                 $mail->SMTPAuth = true; // Enable authentication
-                $mail->Username = 'linh.nguyenthikhanh02@gmail.com'; // SMTP username
-                $mail->Password = 'Khanhlinh112002.';   // SMTP password
+                $mail->Username = 'benq15420@gmail.com'; // SMTP username
+                $mail->Password = 'ftxavrbvbcyvffmk';   // SMTP password
                 $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
                 $mail->Port = 465;  // port to connect to                
-                $mail->setFrom('linh.nguyenthikhanh02@gmail.com', 'Du lịt cùng cu pé' ); 
+                $mail->setFrom('linh.nguyenthikhanh02@gmail.com', 'Ben Quik website' ); 
                 $mail->addAddress($email); 
                 $mail->isHTML(true);  // Set email format to HTML
                 $mail->Subject = 'Verify your email';
-                $mail->Body =  "<p>Hello $email</p><br>
-                <p>Mình thấy bạn  $username  có hứng thú với việc đăng xuất khỏi trái Đất cùng Khánh Linh</p>
-                <p style='color:red;'>Chúc bạn có mụt chiến du lịt vui vẻ *đá đít*</p>
-                <p style='color:red;'>Đây là mật khẩu tài khoản \".$password\" đừng quyên mật khẩu để được đá đít nhìu lần nhé!</p>
-                <button  style='color:yellow; background:black;'>Tin nhắn được gửi từ cu pé đáng iu nhứt hệ mặt trời</button>";
-                //$mail->addAttachment('https://images.pexels.com/photos/1275393/pexels-photo-1275393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', 'khanhlinh');
-                // <p>You're receiving this email because you recently signed up for a Ben Quick account. 
-                // To complete the signup process, hit the button below to verify your account.</p><br>
-                // <a href='signin.php'><button>Verify email</button></a><br>
-                // <p>If you didn't sign up for an account with us, please ignore this message :)</p>
-                // <span>- Ben Quick Team</span>";
+                $mail->Body =  "<p>Chào mừng bạn đến với Graphicprose.</p><br>
+                <p>Rất vui khi gặp bạn $username đã đến với NEW Stories của chúng tôi.</p>
+                <p>Giờ đây bạn đã trở thành một thành viên của gia đình Graphicprose.</p>
+                <p>Đây là tất cả các thông tin mà bạn đã đăng ký tài khoản tại Graphicprose:</p>
+                <p style='color:red;'>Tên tài khoản: $username.</p>
+                <p style='color:red;'>Mật khẩu: $password.</p>
+                <p>Giờ đây bạn đã sở hữu cho mình một tài khoản dành riêng cho Graphicprose.</p>
+                <p>Chúc bạn có những trải nghiệm thật thú vị tại Graphicprose của chúng tôi.</p>
+                ";
                 $mail->smtpConnect( array(
                     "ssl" => array(
                         "verify_peer" => false,
@@ -336,10 +336,4 @@
             
     }
     
-
-    $test = new dataProcessor;
-
-    // $test->renderData();
-    // $test->renderComment(['idPhoto' => 1]);
-
 ?>

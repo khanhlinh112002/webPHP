@@ -1,5 +1,5 @@
 <?php
-    session_start(); 
+session_start(); 
 
     include dirname(__DIR__)."/../PHP/dataProcessor.php";
 
@@ -39,7 +39,7 @@
     </div>
     <div class="button__nav">
         <div class="btn__go__homepage">
-            <a href="../../user/page/home.php">homepage</a>
+            <a href="../../user/page/index.php">homepage</a>
         </div>
         <div class="btn__go__new_posts_wrapper">
             <div class="btn__go__news__post">
@@ -59,7 +59,7 @@
                                 foreach($listPhoto as $listPhotoItem){
                                 ?>
                                     <a href="../../user/page/detailStyle.php?idPost=<?php echo $listPhotoItem['idPost'] ?>">
-                                        <img src="../../assets/image/<?php echo $listPhotoItem["image"] ?>" alt="">
+                                        <img src="../../assets/image/<?php echo $listPhotoItem['idPost']     .'/'. $listPhotoItem["image"] ?>" alt="">
                                         <div class="post__title"><?php echo $listPhotoItem["namePhoto"] ?></div>
                                     </a>
                                     <button class="icon__liked" onclick="removeItemWishList(<?= $listPhotoItem['idPhoto'] . ',' . $idUser  ?>); $(this).parent().remove(); "><i class="fa-solid fa-heart"></i></button>
@@ -72,10 +72,10 @@
             ?>
         </div>
     </section>
-
 </main>
+<!-- <script src="../"></script> -->
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="../../assets/js/stories-js.js"></script>
 <script src="../../assets/js/function.js"></script>
+<script src="../../assets/js/wishList.js"></script>
 </body>
 </html>

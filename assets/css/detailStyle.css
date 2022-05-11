@@ -3,7 +3,7 @@
     --c--bacgroundcolor--ofitem: #E2D9CE;
     --c__color_btn: #4ea685;
     --c--fonsize--name--detail: 25px;
-    --c--fonsize--content--detail: 20px;
+    --c--fonsize--content--detail: 16px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap");
@@ -40,20 +40,21 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    width: 60%;
+    width: 45%;
+}
+
+.c__no-pad img {
+    box-shadow: 0px 1px 6px 1px var(--c__color_btn)
 }
 
 #c__gallery-box {
     position: relative;
     overflow: hidden;
-    /* border: 1px solid #CCC; */
     width: 60%;
     margin: 24px auto;
-    /* box-shadow: 1px 2px 32px var(--c__color_btn); */
 }
 
 #c__caption {
-    margin: 8px 0;
     text-align: center;
     line-height: 2;
     width: 60%;
@@ -63,7 +64,7 @@ body {
     text-transform: capitalize;
     font-size: 30px;
     color: #000000;
-    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px #1296ba, 0px 18px 23px rgb(0 0 0 / 10%);
+    text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 1px 2px 13px #51a9c1, 8px 4px 23px rgb(14 8 8 / 68%);
 }
 
 #c__gallery-count {
@@ -87,8 +88,8 @@ body {
 
 #c__gallery-icon {
     position: absolute;
-    bottom: 2%;
-    right: 1%;
+    bottom: 0%;
+    right: 40%;
     background-color: none;
     z-index: 20;
 }
@@ -151,10 +152,10 @@ body {
 }
 
 #c__gallery-link img {
-    width: 100%;
     transition: all 1s;
-    height: 70vh;
-    object-fit: cover;
+    margin: 30px auto 30px;
+    max-height: 45vh;
+    object-fit: contain;
 }
 
 #c__gallery-link:hover img {
@@ -164,7 +165,6 @@ body {
 
 #c__gallery-link {
     overflow: hidden;
-    height: 70vh;
 }
 
 .c__gallery-thumbnails {
@@ -210,6 +210,11 @@ body {
 
 .--c--mytabs input[type="radio"]:checked+label {
     box-shadow: 4px 0 6px 0px var(--c__color_btn);
+}
+
+#c__gallery-link p {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .--c--btn {
@@ -310,6 +315,10 @@ p.c__delete_coment {
     color: rgb(28, 28, 148);
 }
 
+.c__delete_coment i {
+    font-size: var(--c--fonsize--content--detail);
+}
+
 p.c__delete_coment:hover {
     cursor: pointer;
     color: blue;
@@ -331,11 +340,14 @@ p.c__delete_coment:hover {
     .c__container {
         width: 90%;
     }
+    .c__no-pad {
+        width: 72%;
+    }
 }
 
 @media screen and (max-width: 1024px) {
      :root {
-        --c--fonsize--content--detail: 15px;
+        --c--fonsize--content--detail: 14px;
     }
     .c__container,
     .c__container_detail {
@@ -345,12 +357,16 @@ p.c__delete_coment:hover {
 
 @media screen and (max-width: 700px) {
      :root {
-        --c--fonsize--content--detail: 15px;
+        --c--fonsize--content--detail: 14px;
     }
     .c__hr,
     .--c--mytabs,
     .c__container_detail,
-    #c__gallery-box {
+    #c__gallery-box,
+    #c__gallery-link p {
         width: 95%;
+    }
+    .c__no-pad {
+        width: 72%;
     }
 }

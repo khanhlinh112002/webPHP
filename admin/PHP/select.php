@@ -125,39 +125,6 @@ if (isset($_POST["idPost"])) {
           $output .= "</table></div>";  
           echo $output;  
      }  
-          if(isset($_POST["account_id"])){  
-          $idaccount = $_POST["account_id"];
-          $output = '';  
-          $sql = "select * from users where idUser= " . $idaccount;
-          $results = $conn->query($sql);
-     
-          $output .= '  
-          <div class="table-responsive">  
-               <table class="table table-bordered">';  
-          while($row = $results->fetch_assoc()) 
-          {  
-               $output .= '  
-                    <tr>  
-                         <td width="30%"><label>Name</label></td>  
-                         <td width="70%">'.$row["username"].'</td>  
-                    </tr>
-                    <tr>  
-                         <td width="30%"><label>Address</label></td>  
-                         <td width="70%">'.$row["address"].'</td>  
-                    </tr> 
-                    <tr>  
-                         <td width="30%"><label>Email</label></td>  
-                         <td width="70%">'.$row["email"].'</td>  
-                    </tr> 
-                    <tr>  
-                         <td width="30%"><label>Date</label></td>  
-                         <td width="70%">'.$row["createDate"].'</td>  
-                    </tr> 
-                   
-                    ';  
-          }  
-          $output .= "</table></div>";  
-          echo $output;  
-     }  
+          
 
  ?>

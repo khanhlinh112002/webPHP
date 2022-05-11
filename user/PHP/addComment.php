@@ -12,14 +12,10 @@
         $idUser = $_POST['idUser'];
         if(!empty($content)) {
             if($content !== "") {
-                $mainData->insert("comments", creator::createComment($idPost, $content)->castToArray());;
-            }else {
-
+                $mainData->insert("comments", creator::createComment($idPost, $content)->castToArray());
+                echo "Ok";
             }
-        } else {
-
         }
-        
     }
 
 ?>

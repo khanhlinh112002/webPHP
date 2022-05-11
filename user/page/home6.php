@@ -23,7 +23,7 @@
         <div class="menu">
             <ul class="main_menu">
                 <li>
-                    <a href="../../user/page/home.php">Home</a>
+                    <a href="../../user/page/index.php">Home</a>
                 </li>
                 <li>
                 Gates of Hue

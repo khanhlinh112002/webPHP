@@ -31,7 +31,7 @@ class paginate
             <div class="post__thumbnail">
 
                 <div class="post__img">
-                    <img src= "../../assets/image/<?php echo $data[$i]['image'] ?>" alt="">
+                    <img src= "../../assets/image/<?php echo  $data[$i]['idPost'] .'/'. $data[$i]['image'] ?>" alt="">
                     <div class="img__wrapper">
                     </div>
                 </div>

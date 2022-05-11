@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(!isset($_SESSION['idUser'])){
+        session_start();
+    }
 
     class creator {
         public static function createComment($idPost, $comment) {

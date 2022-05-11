@@ -10,14 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
 </head>
 
-<!-- <script>
-
-    const login = () => {
-        
-    }
-        
-</script> -->
-
 <body>
     <div id="container" class="container">
         <!-- FORM SECTION -->

@@ -1,5 +1,5 @@
 <?php
-
+session_start();   
 ?>
 <!doctype html>
 <html lang="en">
@@ -75,23 +75,7 @@
             }
         });
     }
-    $(document).ready(function() {
-        var docWidth = $('body').width(),
-            slidesWidth = $('.wishlist__post').width(),
-            $images = $('.wishlist__post');
-        $(document).on('mousemove', function(e) {
-            var mouseX = e.pageX,
-                offset = mouseX / docWidth * slidesWidth - mouseX / 2;
-            $images.css({
-                '-webkit-transform': 'translate3d(' + -offset + 'px,0,0)',
-                'transform': 'translate3d(' + -offset + 'px,0,0)'
-            });
-        });
-    });
 
 </script>
-
-<script src="/assets/js/stories-js.js"></script>
-<!--<script src="/user/PHP/renderData.php"></script>-->
 
 </html>

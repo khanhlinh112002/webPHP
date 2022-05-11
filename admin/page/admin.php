@@ -1,7 +1,8 @@
 <?php
-session_start();
-include '../PHP/db_connect.php';
-include '../PHP/adminClass.php'; ?>
+    session_start();
+    include '../PHP/db_connect.php';
+    include '../PHP/adminClass.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +48,10 @@ include '../PHP/adminClass.php'; ?>
             color: #fff;
             background-color: #007bff;
         }
+        span.dashboard.ml-5 {
+    margin-left: 16px;
+   
+}
     </style>
 
 
@@ -70,7 +75,7 @@ include '../PHP/adminClass.php'; ?>
             <li>
                 <a href="#" onclick="userManager()">
                     <i class='bx bx-user-circle'></i>
-                    <span class="links_name">Acount user</span>
+                    <span class="links_name">Account user</span>
                 </a>
 
             </li>
@@ -87,30 +92,15 @@ include '../PHP/adminClass.php'; ?>
                 </a>
             </li>
 
-            <li>
-                <a href="#">
-                    <i class='bx bx-message'></i>
-                    <span class="links_name">Messenger</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>
+            
         </ul>
     </div>
     <section class="home-section">
         <nav>
             <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Ben Quick</span>
+                <span class="dashboard m-2">Ben Quick</span>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
+            
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link " id="login" href="#" role="button" data-bs-toggle="modal" data-bs-target="#c__login"><i class="fas fa-user fa-fw"></i></a>
@@ -176,7 +166,7 @@ include '../PHP/adminClass.php'; ?>
                 </div>
             </div>
             <div class="tab-pane active" id="user">
-                <h3 class="display-4">Accoutn user</h3>
+                <h3 class="display-4">Account user</h3>
                 <hr style="border: 1px solid rgb(0, 0, 0); ">
                 <div class="customer">
                     <table class="table table-striped table-hover mb-0">
@@ -184,10 +174,10 @@ include '../PHP/adminClass.php'; ?>
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Username</th>
-                                <th scope="col">Address</th>
+                              
                                 <th scope="col">Phone number</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">CreateDate</th>
+                                <th scope="col">View detail</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -201,15 +191,14 @@ include '../PHP/adminClass.php'; ?>
                             <tr>
                                 <td><?php echo $row["idUser"]?></td>
                                 <td><?php echo $row["username"]?></td>
-                                <td><?php echo $row["address"]?></td>
+                              
                                 <td><?php echo $row["phonenumber"]?></td>
-                                <td><?php echo $row["email"]?></td>
-                                <td><?php echo $row["createDate"]?></td>
+                                
                             
                                 <td>
                                     <button type="button" id="<?php echo $row["idUser"]?>"
                                         class="btn btn-info btn-xs view_dataaccount" data-bs-toggle="modal">View
-                                        detail</button>
+                                        </button>
                                 </td>
                             </tr>
                             <?php 
@@ -223,16 +212,14 @@ include '../PHP/adminClass.php'; ?>
                 <h3 class="display-4">Contact</h3>
                 <hr style="border: 1px solid rgb(0, 0, 0); ">
                 <div>
-                    <table class="table table-striped table-hover mb-0">
+                    <table class="table table-striped table-hover mb-0" >
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">Subject</th>
-                                <th scope="col">Email</th>
+                                
                                 <th scope="col">Name</th>
-                                <th scope="col">Content</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">DateContact</th>
+                                <th scope="col">Subject</th>
+                                <th scope="col">View detail</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -241,23 +228,18 @@ include '../PHP/adminClass.php'; ?>
                             $selRes = mysqli_query($conn,$selectContact);
                             if($selRes){
                                 while($row = mysqli_fetch_assoc($selRes)){
-
-                                
                             ?>
                             <tr>
-                                <td><?php echo $row['idContact']?></td>
-                                <td><?php echo $row['subjects']?></td>
-                                <td><?php echo $row['email']?></td>
+                                <th scope="row"><?php echo $row['idContact']?></th>
+                                
                                 <td><?php echo $row['fullname']?></td>
-                                <td><?php echo $row['content']?></td>
+                                <td><?php echo $row['subjects']?></td>
 
-                                <td><?php echo $row['phone']?></td>
-                                <td><?php echo $row['dateContact']?></td>
 
 
                                 <td><button type="button" id="<?php echo $row["idContact"]?>"
                                         class="btn btn-info btn-xs view_datacontact" data-bs-toggle="modal">View
-                                        detail</button></td>
+                                        </button></td>
                             </tr>
                             <?php 
                             }

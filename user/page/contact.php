@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/contactStyle.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
 </head>
 
 <body>
@@ -29,42 +29,46 @@
                 <div class="section_thumbnail">
                     <div class="thumbnail">
                         <a href=""><br><br><br><br>
-                            <img src="../../assets/image/contactImage.jpg">
+                            <img src="../../assets/image/contact_img.jpg">
                         </a>
                     </div>
                 </div>
             </div>
             <div class="contactForm ">
-            <form action=" ../PHP/contact.php" method="POST">
+                <form action=" ">
                     <h2>Send Message</h2>
                     <div class="inputBox "><br>
-                        <input type="text " name="fullName" required="required ">
+                        <input type="text " name=" " required="required ">
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox ">
-                        <input type="text " name="email" required="required ">
+                        <input type="text " name=" " required="required ">
                         <span>Email</span>
                     </div>
                     <div class="inputBox ">
-                        <textarea required="required " name = "subject"></textarea>
+                        <input type="text " name=" " required="required ">
+                        <span>Phone number</span>
+                    </div>
+                    <div class="inputBox ">
+                        <textarea required="required "></textarea>
                         <span>Subject</span>
                     </div>
                     <div class="inputBox ">
-                        <textarea required="required " name = "content"></textarea>
+                        <textarea required="required "></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox ">
-                        <button name = "sendContact" class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
                     </div>
-                </form> 
+                </form>    
             </div>    
         </div>
     </div>
-    <?php include_once 'footer.php'?>
+    <?php include_once'footer.php'?> 
+    
+    
+      
 
 </body>
 
 </html>
-
-
-

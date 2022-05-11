@@ -1,5 +1,5 @@
 <?php   
-    // session_start();
+    session_start();
 
     include dirname(__DIR__)."/../PHP/dataProcessor.php";
     include dirname(__DIR__)."/../PHP/creator.php";
@@ -12,7 +12,7 @@
         $idUser = $_SESSION['idUser'];
     }else{
         $idUser = 0;
-    }
+    }   
 
     $idComment = 0;
     $result = $mainData->selectData("photos", ["idPost" => $idPost]);
@@ -41,27 +41,37 @@
 
 <script>
 
-    const addComment = (idPost, idUser, idComment) => {
+const addComment = (idPost, idUser, idComment) => {
+    
+    if(idUser == 0){
+        console.log(idComment)
+        if(confirm("Log In to Comment")){
+            console.log("Yes");
+            location.href = '../../user/page/login_logout.php?';
+        }
+    }else{
+        console.log("123")
         var content = $('.newComment').val();
         $.ajax({
-            url: "../../user/PHP/addComment.php",
-            method: "post",
-            data: { idPost: idPost, content: content, idUser: idUser },
+        url: "../../user/PHP/addComment.php",
+        method: "post",
+        data: { idPost: idPost, content: content, idUser: idUser },
+        success: function(data){
+            console.log(data);
+        }
         });
         $('.newComment').val("");
         var today = new Date();
-        var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+        var date = today.getDate()+'/0'+(today.getMonth()+1)+'/'+today.getFullYear();
         element =
             `
             <div class="--c--comment--content">
                 <div class="c__user_flexcoment">
                     <p>
-
                         <i class="fa fa-user-circle" aria-hidden="true"></i>
-
                     </p>
                     <div class="c__user_coment">
-                        <p class="c__user_coment" name="nameuser"><?= $mainData->runArray($mainData->selectData("users",["idUser" => $idUser]))['username'] ?></p>
+                        <p class="c__user_coment" name="nameuser"><?php foreach($mainData->selectData("users", ["idUser" => $idUser]) as $userList){echo $userList["username"];}?> </p>
                         <p class="--c--conten--date" name="date">${date}</p>
                         <p class="--c--content--detail" name="content-user">${content}</p>
 
@@ -70,9 +80,13 @@
                 <p class="c__delete_coment" onclick = "deleteComment(<?=  $idPost . "," . $idUser  ?> , ${idComment + 1}); $(this).parent().remove();">Delete</p>
             </div>
         `
-
-        $(".--c--tab").append(element);
+        if(content == ""){
+            alert("Enter content to comment")
+        }else{
+            $(".comment").append(element);
+        }
     }
+}
 
 </script>
 
@@ -102,7 +116,7 @@
                     <?php
                         foreach($result as $photo) {
                             ?>  
-                                <img id="<?php echo $photo['idPhoto']; ?>" class="img-responsive fff" src="../../assets/image/<?php echo $photo['image']; ?>" alt="<?php echo $photo['namePhoto']; ?>" />
+                                <img id="<?php echo $photo['idPhoto']; ?>" class="img-responsive fff" src="../../assets/image/<?php echo $photo['idPost']  . '/' . $photo['image']; ?>" alt="<?php echo $photo['namePhoto']; ?>" />
                             <?php
                         }
                     ?>
@@ -114,37 +128,43 @@
             <input type="radio" id="tabsilver" name="mytabs" checked="checked">
             <label for="tabsilver">Reviews</label>
             <div class="--c--tab">
-                <?php
-                    $commentList = $mainData->selectData("comments", ["idPost" => $idPost]);
-                    foreach($commentList as $comment){
-                        if($idComment <= $comment['idComment']){
-                            $idComment = $comment['idComment'];
-                        }
-                ?>
-                <div class="--c--comment--content">
-                    <div class="c__user_flexcoment">
-                        <p>
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        </p>
-                        <div class="c__user_coment">
-                            <p class="c__user_coment" name="nameuser"><?= $mainData->runArray($mainData->selectData("users", ['idUser' => $comment['idUser']]))['username']; ?></p>
-                            <p class="--c--conten--date" name="date"><?= $comment['dateComment'] ?></p>
-                            <p class="--c--content--detail" name="content-user"> <?= $comment['content'] ?> </p>
-                        </div>
-                    </div>
-                    <p class="c__delete_coment <?php echo $mainData->runArray($mainData->selectData("users", ['idUser' => $comment['idUser']]))['idUser'] == $idUser ? "" : "hide" ?>" onclick = "deleteComment(<?= $idPost . ',' . $comment['idUser'] . ',' . $idComment ?>); $(this).parent().remove();">Delete</p>
-                </div>
-                <?php 
-                    }
+                <!-- add the div -->
+                <div class="comment">
+                    <?php
+                        $commentList = $mainData->selectData("comments", ["idPost" => $idPost]);
+                        foreach($commentList as $comment){
+                            if($idComment <= $comment['idComment']){
+                                $idComment = $comment['idComment'];
+                            }
                     ?>
+                    <div class="--c--comment--content">
+                        <div class="c__user_flexcoment">
+                            <p>
+
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+
+                            </p>
+                            <div class="c__user_coment">
+                                <p class="c__user_coment" name="nameuser"><?= $mainData->runArray($mainData->selectData("users", ['idUser' => $comment['idUser']]))['username']; ?></p>
+                                <p class="--c--conten--date" name="date"><?= $comment['dateComment'] ?></p>
+                                <p class="--c--content--detail" name="content-user"> <?= $comment['content'] ?> </p>
+                            </div>
+                        </div>
+                        <p class="c__delete_coment <?php echo $mainData->runArray($mainData->selectData("users", ['idUser' => $comment['idUser']]))['idUser'] == $idUser ? "" : "hide" ?>" onclick = "deleteComment(<?= $idPost . ',' . $comment['idUser'] . ',' . $idComment ?>); $(this).parent().remove();">Delete</p>
+                    </div>
+                    <?php 
+                        }
+                    ?>
+                </div>
+
                 <div class="--c--form--comment">
                     <form action="" method="POST">
                         <textarea name="" class="--c--comment newComment" id="prolackkd"
                             placeholder="Enter here...!"></textarea>
                         <br>
-                        <button type="button" class="--c--btn " name="sendComment"  onclick="addComment(<?=  $idPost . ',' . $idUser . ','. $idComment ?>) "> Post your comment </button>
+                        <button type="button" class="--c--btn " name="sendComment"  onclick="addComment(<?=  $idPost . ',' . $idUser . ','. $idComment ?>)"> Post your comment </button>
                     </form>
-                </div>  
+                </div>
             </div>
             <input type="radio" id="--c--tabdescription" name="mytabs">
             <label for="--c--tabdescription">Description</label>
